@@ -1,0 +1,22 @@
+{
+  "name": "web_module_tpl",
+  "version": "0.0.1",
+  "description": "web前端模块化项目模板",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangchonglu/web_module_tpl.git"
+  },
+  "keywords": [
+    "web前端模块化项目模板"
+  ],
+  "author": "chonglu.wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangchonglu/web_module_tpl/issues"
+  },
+  "homepage": "https://github.com/wangchonglu/web_module_tpl#readme"
+}
