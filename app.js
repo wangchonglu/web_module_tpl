@@ -13,11 +13,13 @@ define(function (require, exports, module) {
         "/:moudle/:page/?((\w|.)*)": function (moudle, page, data) {
 
             console.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
-            var moduleTpl = "./{0}/{1}/page.html".format(moudle, page);
-            var moduleJs = "./{0}/{1}/page.js".format(moudle, page);
-            var moduleCss = "./{0}/{1}/page.css".format(moudle, page);
+            var moduleTpl = "./modules/{0}/{1}/page.html".format(moudle, page);
+            var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
+            var moduleCss = "./modules/{0}/{1}/page.css".format(moudle, page);
+           // var baseModule = "./modules/common/basePage.js".format(moudle, page);
             //加载动态数据，需用async
             require.async([moduleTpl, moduleJs, moduleCss], function (tpl, run) {
+                debugger
                 var $content = $(tpl);
                 $.isFunction(run.load) && run.load($content, data);
                 $("#main").html($content);
@@ -25,6 +27,7 @@ define(function (require, exports, module) {
         }
     };
     window.router = new _router.Router(routesConfig);
+    router.setRoute("pages/page1");//设置默认首页
     router.init();//路由初始化
 });
 

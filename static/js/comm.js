@@ -1,25 +1,62 @@
 /**
  * Created by zyc on 2016/6/11.
  */
-String.prototype.format = function(args) {
-    var result = this;
-    if (arguments.length > 0) {
-        if (arguments.length == 1 && typeof (args) == "object") {
-            for (var key in args) {
-                if(args[key]!=undefined){
-                    var reg = new RegExp("({" + key + "})", "g");
-                    result = result.replace(reg, args[key]);
+
+define(function (require, exports, module) {
+
+    //字符串格式化
+    String.prototype.format = function (args) {
+        var result = this;
+        if (arguments.length > 0) {
+            if (arguments.length == 1 && typeof (args) == "object") {
+                for (var key in args) {
+                    if (args[key] != undefined) {
+                        var reg = new RegExp("({" + key + "})", "g");
+                        result = result.replace(reg, args[key]);
+                    }
+                }
+            }
+            else {
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] != undefined) {
+                        var reg = new RegExp("({[" + i + "]})", "g");
+                        result = result.replace(reg, arguments[i]);
+                    }
                 }
             }
         }
-        else {
-            for (var i = 0; i < arguments.length; i++) {
-                if (arguments[i] != undefined) {
-                    var reg = new RegExp("({[" + i + "]})", "g");
-                    result = result.replace(reg, arguments[i]);
-                }
-            }
-        }
+        return result;
     }
-    return result;
-}
+
+    var config = require("config");
+    //日志
+    window.logger = {
+        _loggerList: [],
+        log: function () {
+            console.log.apply(console, arguments);
+            if(config.isDebug){
+                this._loggerList.push(arguments);
+            }
+        },
+        warn: function () {
+            console.warn.apply(console, arguments);
+            if(config.isDebug){
+                this._loggerList.push(arguments);
+            }
+        },
+        error: function () {
+            console.error.apply(console, arguments);
+            if(config.isDebug){
+                this._loggerList.push(arguments);
+            }
+        },
+        info: function () {
+            console.info.apply(console, arguments);
+            if(config.isDebug){
+                this._loggerList.push(arguments);
+            }
+        }
+
+    };
+
+});

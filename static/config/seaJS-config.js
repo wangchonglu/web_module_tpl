@@ -5,12 +5,15 @@
 seajs.config({
     base: "/",
     paths: {
-
+        "configPath":"./../../static/config",
+        "libPath":"./static/js",
     },
     alias: {
-        "jquery": "./static/js/jquery.min",
-        "router": "./static/js/director",
-        "comm": "./static/js/comm",
+        "config": "configPath/config",
+        "jquery": "libPath/jquery.min",
+        "router": "libPath/director",
+        "comm": "libPath/comm"
+
     },
     map: [
         [/^(.*\.(?:css|js|htm))(\?.*)?$/i, '$1?20160616']
