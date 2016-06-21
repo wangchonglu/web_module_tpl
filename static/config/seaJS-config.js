@@ -3,7 +3,7 @@
  */
 // seajs 的简单配置
 seajs.config({
-    base: "/",
+    base: "/web_module_tpl",
     paths: {
         "configPath":"./../../static/config",
         "libPath":"./static/js",
@@ -12,8 +12,8 @@ seajs.config({
         "config": "configPath/config",
         "jquery": "libPath/jquery.min",
         "router": "libPath/director",
-        "comm": "libPath/comm"
-
+        "comm": "libPath/comm",
+        "baseModule":'./../../common/basePage'
     },
     map: [
         [/^(.*\.(?:css|js|htm))(\?.*)?$/i, '$1?20160616']
