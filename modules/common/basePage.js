@@ -9,15 +9,16 @@ define(function (require, exports, module) {
         html:undefined,//模块html
         params:undefined,//参数
         _isInit:false,//是否初始化
+        //数据
         data:{
             
         },
         //组件init 仅执行一次
-        baseReady:function(){
+        baseReady:function(params){
             logger.log("组件初始化baseReady ",this.title);
         },
         //每次切换进入到该组件 都会被执行
-        baseLoad:function(){
+        baseLoad:function(params){
             logger.log("组件加载baseLoad ",this.title);
             window.document.title = this.title;
         },

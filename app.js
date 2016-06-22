@@ -23,12 +23,11 @@ define(function (require, exports, module) {
 
                 console.log('html-------', mod.html);
                 !mod.html && (mod.html = $(tpl));//设置模块的html
-                mod.params = data;//设置模块参数
-                !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady();//父组件初始化
-                !mod._isInit && $.isFunction(mod.ready) && mod.ready();//组件初始化
+                !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
+                !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化
                 !mod._isInit && (mod._isInit = true);//组件设为已经初始化
-                $.isFunction(mod.baseLoad) && mod.baseLoad();//父组件进入
-                $.isFunction(mod.load) && mod.load();//组件进入
+                $.isFunction(mod.baseLoad) && mod.baseLoad(data);//父组件进入
+                $.isFunction(mod.load) && mod.load(data);//组件进入
 
                 if (window.currentModule) {
                     //新模块进入显示前，使用detach删除旧模块，以保存模块所有事件
@@ -48,7 +47,7 @@ define(function (require, exports, module) {
     //跳转页面
     window.jumpPage = function (url, param) {
         var param = typeof param == "object" ? JSON.stringify(param) : param;
-        router.setRoute(url, param);
+        router.setRoute('{0}/{1}'.format(url,param));
     }
 
 });
