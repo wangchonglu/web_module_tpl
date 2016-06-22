@@ -1,6 +1,6 @@
 /**
  * Created by zyc on 2016/6/20.
- * base页面模块  所有模块均继承与它
+ * base页面模块
  */
 define(function (require, exports, module) {
 
