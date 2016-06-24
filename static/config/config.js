@@ -4,7 +4,7 @@
 
 define(function(require, exports, module){
 
-    module.config = {
+    module.exports = {
         isDebug: true// 是否开启调试模式,调试模式开启会打印日志信息
 
 

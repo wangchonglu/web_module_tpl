@@ -9,7 +9,8 @@ define(function (require, exports, module) {
         //数据
         data: function () {
             return {
-                list: [{id: 1, name: "abc"}, {id: 2, name: "efg"}]
+                list: [{id: 1, name: "abc"}, {id: 2, name: "efg"}],
+                user:{  }
             };
         },
         //组件init 仅执行一次

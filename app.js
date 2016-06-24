@@ -7,21 +7,18 @@ define(function (require, exports, module) {
     window["$"] = window.jQuery = require('jquery');
     require("comm");//通用函数
 
-    window.mainDom = $("#main");
+    var mainDom = $("#main");
 
     var _router = require("router");
     //路由配置
     var routesConfig = {
         "/:moudle/:page/?((\w|.)*)": function (moudle, page, data) {
-
-            console.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
+            logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
             var moduleTpl = "./modules/{0}/{1}/page.html".format(moudle, page);
             var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
             var moduleCss = "./modules/{0}/{1}/page.css".format(moudle, page);
             //加载动态数据，需用async
             require.async([moduleTpl, moduleJs, moduleCss], function (tpl, mod) {
-
-                console.log('html-------', mod.html);
                 !mod.html && (mod.html = $(tpl));//设置模块的html
                 !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
                 !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化
@@ -34,19 +31,18 @@ define(function (require, exports, module) {
                     window.currentModule.html = window.currentModule.html.detach();
                 }
                 window.currentModule = mod;//保存当前模块
-                window.mainDom.hide();
-                window.mainDom.html(mod.html).fadeIn();//显示模块内容
+                mainDom.html(mod.html);//显示模块内容
 
             });
         }
     };
-    window.router = new _router.Router(routesConfig);
+    var router = new _router.Router(routesConfig);
     router.setRoute("pages/page1");//设置默认首页
     router.init();//路由初始化
 
     //跳转页面
     window.jumpPage = function (url, param) {
-        var param = typeof param == "object" ? JSON.stringify(param) : param;
+        param = typeof param == "object" ? JSON.stringify(param) : param;
         router.setRoute('{0}/{1}'.format(url,param));
     }
 

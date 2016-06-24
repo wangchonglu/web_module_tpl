@@ -11,7 +11,7 @@ define(function (require, exports, module) {
         _isInit:false,//是否初始化
         //数据
         data:{
-            
+           user:{  }
         },
         //组件init 仅执行一次
         baseReady:function(params){

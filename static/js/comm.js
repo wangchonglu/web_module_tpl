@@ -33,26 +33,27 @@ define(function (require, exports, module) {
     window.logger = {
         _loggerList: [],
         log: function () {
-            console.log.apply(console, arguments);
-            if(config.isDebug){
+            if (config.isDebug) {
+                console.log.apply(console, arguments);
                 this._loggerList.push(arguments);
             }
         },
         warn: function () {
-            console.warn.apply(console, arguments);
-            if(config.isDebug){
+            if (config.isDebug) {
+                console.warn.apply(console, arguments);
                 this._loggerList.push(arguments);
             }
         },
         error: function () {
-            console.error.apply(console, arguments);
-            if(config.isDebug){
+            debugger
+            if (config.isDebug) {
+                console.error.apply(console, arguments);
                 this._loggerList.push(arguments);
             }
         },
         info: function () {
-            console.info.apply(console, arguments);
-            if(config.isDebug){
+            if (config.isDebug) {
+                console.info.apply(console, arguments);
                 this._loggerList.push(arguments);
             }
         }
