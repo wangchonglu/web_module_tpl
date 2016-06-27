@@ -1,8 +1,8 @@
 
 #page1{
-    background-color: brown;
+
 }
 
-#page1 div{
-
+#page1 li{
+    padding:10px
  }

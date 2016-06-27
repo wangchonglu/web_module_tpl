@@ -13,6 +13,7 @@ define(function (require, exports, module) {
     //路由配置
     var routesConfig = {
         "/:moudle/:page/?((\w|.)*)": function (moudle, page, data) {
+
             logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
             var moduleTpl = "./modules/{0}/{1}/page.html".format(moudle, page);
             var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
@@ -20,12 +21,6 @@ define(function (require, exports, module) {
             //加载动态数据，需用async
             require.async([moduleTpl, moduleJs, moduleCss], function (tpl, mod) {
                 !mod.html && (mod.html = $(tpl));//设置模块的html
-                !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
-                !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化
-                !mod._isInit && (mod._isInit = true);//组件设为已经初始化
-                $.isFunction(mod.baseLoad) && mod.baseLoad(data);//父组件进入
-                $.isFunction(mod.load) && mod.load(data);//组件进入
-
                 if (window.currentModule) {
                     //新模块进入显示前，使用detach删除旧模块，以保存模块所有事件
                     window.currentModule.html = window.currentModule.html.detach();
@@ -33,6 +28,11 @@ define(function (require, exports, module) {
                 window.currentModule = mod;//保存当前模块
                 mainDom.html(mod.html);//显示模块内容
 
+                !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
+                !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化
+                !mod._isInit && (mod._isInit = true);//组件设为已经初始化
+                $.isFunction(mod.baseLoad) && mod.baseLoad(data);//父组件进入
+                $.isFunction(mod.load) && mod.load(data);//组件进入
             });
         }
     };
