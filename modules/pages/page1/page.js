@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     var baseModule = require('baseModule');
     module.exports = $.extend({}, baseModule, {
         title: "页面1",
+        html:$(__inline("./page.html")),
         //数据
         data: {},
         //组件init 仅执行一次

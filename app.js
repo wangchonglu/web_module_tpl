@@ -3,6 +3,7 @@
  */
 //入口模块
 define(function (require, exports, module) {
+
     // 通过 require 引入依赖
     window["$"] = window.jQuery = require('jquery');
     require("comm");//通用函数
@@ -15,12 +16,10 @@ define(function (require, exports, module) {
         "/:moudle/:page/?((\w|.)*)": function (moudle, page, data) {
 
             logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
-            var moduleTpl = "./modules/{0}/{1}/page.html".format(moudle, page);
             var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
-            var moduleCss = "./modules/{0}/{1}/page.css".format(moudle, page);
             //加载动态数据，需用async
-            require.async([moduleTpl, moduleJs, moduleCss], function (tpl, mod) {
-                !mod.html && (mod.html = $(tpl));//设置模块的html
+            require.async([moduleJs], function (mod) {
+
                 if (window.currentModule) {
                     //新模块进入显示前，使用detach删除旧模块，以保存模块所有事件
                     window.currentModule.html = window.currentModule.html.detach();
