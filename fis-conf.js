@@ -7,37 +7,55 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader')
 });
 
-fis.match('/static/js/sea.js', {
-        isMod: false
-    })
-    .match('/static/js/seajs-text.js', {
-        isMod: false
-    })
-
-
 fis.hook('cmd');
+
+fis.match('/static/js/sea.js', {
+    isMod: false
+});
+
+var commCss = [
+    '/static/css/comm.css',
+    '/modules/**.css'
+];
+var commJs = [
+    "/static/js/sea.js",
+    "/static/config/seaJS-config.js",
+    "/static/config/config.js",
+    "/static/js/seajs-text.js",
+    "/static/js/jquery.min.js",
+    "/static/js/director.js",
+    '/app.js'
+];
 
 fis.media("dev")
     .match('::packager', {
         packager: fis.plugin('map', {
-            '/static/all.css': [
-                '/static/css/comm.css',
-                '/modules/**.css',
-            ],
-            '/static/all.js': [
-                "/static/js/sea.js",
-                "/static/config/seaJS-config.js",
-                "/static/config/config.js",
-                "/static/js/seajs-text.js",
-                "/static/js/jquery.min.js",
-                "/static/js/director.js",
-                "/static/config/config.js",
-                '/app.js',
+            '/static/all.css': commCss,
+            '/static/all.js':commJs.concat([
                 '/static/**.js',
-                '/modules/**.js'
-            ]
+                //'/modules/**.js'
+            ])
         })
     })
-//.match('*.{js,css}', {
-//    useHash: true
-//});
+
+fis.media("prod")
+    .match('::packager', {
+        packager: fis.plugin('map', {
+            '/static/all.css': commCss,
+            '/static/all.js':commJs.concat([
+                '/static/**.js',
+                '/modules/**.js'
+            ])
+        })
+    })
+    .match('**.js', {
+        optimizer: fis.plugin('uglify-js', {
+            drop_console: true
+        })
+    })
+    .match('**.css', {
+        optimizer: fis.plugin('clean-css')
+    })
+    .match('*.{js,css}', {
+        useHash: true
+    });
