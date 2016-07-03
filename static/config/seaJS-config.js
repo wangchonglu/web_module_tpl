@@ -12,3 +12,15 @@ seajs.config({
         "baseModule":'/modules/common/basePage'
     }
 });
+
+
+var list = [
+    'pages/page1',
+    'pages/page2',
+    'pages/page4',
+    'pages/page2',
+    'pages/page4',
+    'pages/page2',
+    'pages/page4'
+
+];

@@ -13,6 +13,9 @@ define(function (require, exports, module) {
         ready: function (params) {
             //跳转
             this.jump();
+
+
+
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {
@@ -20,7 +23,7 @@ define(function (require, exports, module) {
         },
         jump: function () {
            $("#page1 ul").on("click", "li", function () {
-                jumpPage('#pages/page2', '123456789')
+                jumpPage('/pages/page2', '123456789')
             });
         }
     });

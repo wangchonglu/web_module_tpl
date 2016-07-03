@@ -11,7 +11,8 @@ define(function (require, exports, module) {
     var mainDom = $("#main");
 
     //路由模块跳转请求
-    function routeRequire(moudle, page, data){
+    function routeRequire(moudle, page, data) {
+
         logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
         var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
         //加载动态数据，需用async
@@ -37,16 +38,21 @@ define(function (require, exports, module) {
     var routesConfig = {
         "/:moudle/:page/?((\w|.)*)": {
             before: function (moudle, page, data) {
-               // return false;
+                //debugger
+                // return false;
             },
-            on:function(moudle, page, data){
+            on: function (moudle, page, data) {
                 routeRequire(moudle, page, data);
             }
         },
     };
     var router = new _router.Router(routesConfig);
-    router.setRoute("pages/page1");//设置默认首页
+    router.setRoute("/pages/page1");//设置默认首页
     router.init();//路由初始化
+
+    window.addEventListener('popstate', function(event) {
+
+    });
 
     //跳转页面
     window.jumpPage = function (url, param) {
