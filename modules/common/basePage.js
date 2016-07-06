@@ -15,6 +15,14 @@ define(function (require, exports, module) {
         //组件init 仅执行一次
         baseReady: function (params) {
             logger.log("组件初始化baseReady ", this.title);
+
+            //将模块中的包含jid元素保存到对象中  方便操作
+            var self = this;
+            self.dom = {};
+            self.html.find('[id]').each(function(){
+                var key = this.getAttribute("id");
+                self.dom[key] = $(this);
+            });
         },
         //每次切换进入到该组件 都会被执行
         baseLoad: function (params) {
