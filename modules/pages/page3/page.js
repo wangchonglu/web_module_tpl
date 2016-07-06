@@ -5,6 +5,7 @@
 define(function (require, exports, module) {
     var baseModule = require('baseModule');
     module.exports = $.extend({}, baseModule, {
+        html:$(__inline("./page.html")),
         title: "页面3",
         //数据
         data: {},

@@ -1,43 +1,70 @@
 /**
  * Created by zyc on 2016/6/27.
  */
+//设置不打包文件
 fis.set('project.ignore', ["\..*", '.git/**', "README.md", "package.json", "npm-debug.log", 'fis-conf.js']);
 
+//加载loader插件
 fis.match('::packager', {
     postpackager: fis.plugin('loader')
 });
 
-fis.match('/static/js/sea.js', {
-        isMod: false
-    })
-    .match('/static/js/seajs-text.js', {
-        isMod: false
-    });
-
-//fis插件 支持模块化开发
+//加载方式 cmd同步加载  amd异步加载
 fis.hook('cmd');
 
+//非模块的文件
+fis.match('/static/js/sea.js', {
+    isMod: false
+});
+
+//公用部分
+var commCss = [
+    '/static/css/comm.css',
+    '/modules/**.css'
+];
+var commJs = [
+    "/static/js/sea.js",
+    "/static/config/seaJS-config.js",
+    "/static/config/config.js",
+    "/static/js/seajs-text.js",
+    "/static/js/jquery.min.js",
+    "/static/js/director.js",
+    '/app.js'
+];
+
+//开发环境
 fis.media("dev")
     .match('::packager', {
-        packager: fis.plugin('map', {   //css
-            '/static/all.css': [
-                '/static/css/comm.css',
-                '/modules/**.css'
-            ],
-            '/static/all.js': [   //打包
-                "/static/js/sea.js",
-                "/static/config/seaJS-config.js",//sea.js简单配置
-                "/static/config/config.js",//相关的全局配置
-                "/static/js/seajs-text.js", //sea.js插件
-                "/static/js/jquery.min.js",//类库
-                "/static/js/director.js", //路由
-                "/static/config/config.js",//???
-                '/app.js',
-                '/static/**.js',//
-                '/modules/**.js'
-            ]
+        packager: fis.plugin('map', {
+            '/static/all.css': commCss,
+            '/static/all.js': commJs.concat([
+                '/static/**.js',
+                //'/modules/**.js'
+            ])
         })
     });
-//.match('*.{js,css}', {
-//    useHash: true
-//});
+
+//线上环境
+fis.media("prod")
+    .match('::packager', {
+        packager: fis.plugin('map', {
+            '/static/all.css': commCss,
+            '/static/all.js': commJs.concat([
+                '/static/**.js',
+                '/modules/**.js'
+            ])
+        })
+    })
+    //压缩js  css
+    .match('**.js', {
+        optimizer: fis.plugin('uglify-js', {
+            drop_console: true
+        })
+    })
+    .match('**.css', {
+        optimizer: fis.plugin('clean-css')
+    })
+    //添加版本号
+    .match('*.{js,css}', {
+        useHash: true
+    });

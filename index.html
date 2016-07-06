@@ -11,16 +11,13 @@
 </head>
 <body>
 <header id="header">
-    <a href="javascript:history.go(-1)">回退</a>
+    <a href="javascript:history.back()">回退</a>
 </header>
 <article>
     <div id="main" style="padding:10px"></div>
 </article>
 <footer></footer>
 <script src="static/js/sea.js"></script>
-<!--A Sea.js plugin for loading text resources such as template, json etc-->
-<script src="static/js/seajs-text.js"></script>
-<script src="static/config/seaJS-config.js"></script>
 <script>
   seajs.use("./app");
 </script>

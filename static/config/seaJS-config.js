@@ -1,21 +1,26 @@
 /**
- * Created by zyc on 2016/6/11.
+ * Created by zyc on 2016/6/27.
  */
 // seajs 的简单配置
 seajs.config({
-    base: "/web_module_tpl",
-    paths: {
-        "configPath":"./../../static/config",
-        "libPath":"./static/js",
-    },
+    base: "/",
     alias: {
-        "config": "configPath/config",
-        "jquery": "libPath/jquery.min",
-        "router": "libPath/director",
-        "comm": "libPath/comm",
-        "baseModule":'./../../common/basePage'
-    },
-    map: [
-        [/^(.*\.(?:css|js|htm))(\?.*)?$/i, '$1?20160616']
-    ]
+        "config": "/static/config/config",
+        "jquery": "/static/js/jquery.min",
+        "router": "/static/js/director",
+        "comm": "/static/js/comm",
+        "baseModule":'/modules/common/basePage'
+    }
 });
+
+
+var list = [
+    'pages/page1',
+    'pages/page2',
+    'pages/page4',
+    'pages/page2',
+    'pages/page4',
+    'pages/page2',
+    'pages/page4'
+
+];
