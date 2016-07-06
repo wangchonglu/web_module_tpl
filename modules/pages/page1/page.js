@@ -10,6 +10,9 @@ define(function (require, exports, module) {
         //数据
         data: {},
         //组件init 仅执行一次
+
+
+
         ready: function (params) {
             //跳转
             this.jump();
