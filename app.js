@@ -50,10 +50,6 @@ define(function (require, exports, module) {
     router.setRoute("/pages/page1");//设置默认首页
     router.init();//路由初始化
 
-    window.addEventListener('popstate', function(event) {
-
-    });
-
     //跳转页面
     window.jumpPage = function (url, param) {
         param = typeof param == "object" ? JSON.stringify(param) : param;
