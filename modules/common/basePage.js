@@ -3,15 +3,12 @@
  * base页面模块
  */
 define(function (require, exports, module) {
-
     module.exports = {
         title: "模块化project",//标题
         html: undefined,//模块html
         _isInit: false,//是否初始化
         //数据
-        data: {
-
-        },
+        data: {},
         //组件init 仅执行一次
         baseReady: function (params) {
             logger.log("组件初始化baseReady ", this.title);
@@ -19,7 +16,7 @@ define(function (require, exports, module) {
             //将模块中的包含jid元素保存到对象中  方便操作
             var self = this;
             self.dom = {};
-            self.html.find('[id]').each(function(){
+            self.html.find('[id]').each(function () {
                 var key = this.getAttribute("id");
                 self.dom[key] = $(this);
             });
@@ -28,6 +25,11 @@ define(function (require, exports, module) {
         baseLoad: function (params) {
             logger.log("组件加载baseLoad ", this.title);
             window.document.title = this.title;
+        },
+        dataBind: function (tplFilter, data, targetFilter) {
+            var tpl = this.html.filter(tplFilter).html();
+            var listHtml = doT.template(tpl)(data);
+            this.html.find(targetFilter).html(listHtml);
         },
         destroy: function () {
 

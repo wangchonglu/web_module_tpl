@@ -1,31 +1,13 @@
 <div id="page1">
     <b>列表页面</b>
-
-    <input type="file" accept="image/*" id="uploadFile" capture="camera" />
+    <input type="file" accept="image/*" id="uploadFile" capture="camera"/>
     <img id="img" alt="">
-    <ul>
-        <li>商品商品商品商品122</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
-        <li>商品商品商品商品</li>
+    <ul class="shopList">
     </ul>
 </div>
+
+<script type="html/tpl" class="itemTpl">
+    {{ for(var index in it) { var item=it[index]; }}
+        <li>{{=item.name}}{{=index}}</li>
+    {{ } }}
+</script>

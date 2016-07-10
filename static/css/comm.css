@@ -5,7 +5,9 @@
 #header{
     background-color: dodgerblue;
 }
-
+.hide{
+    display: none;
+}
 #dialogBox{
     display: none;
     background-color: rgba(102,102,102,0.8);
@@ -17,4 +19,23 @@
 #dialogBox .dialogContent{
     background-color: white;
     padding:10px;
+}
+#dialogBox .positionTop{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+#dialogBox .positionBottom{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+#dialogBox .positionCenter{
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);;
+    transform:translate(-50%,-50%);
+    width: 100%;
 }
