@@ -9,7 +9,8 @@ seajs.config({
         "jquery": "/static/js/jquery.min",
         "router": "/static/js/director",
         "comm": "/static/js/comm",
-        "baseModule":'/modules/common/basePage'
+        "baseModule":'/modules/common/basePage',
+        "baseDialogModule":'/modules/common/baseDialogPage'
     }
 });
 
