@@ -9,6 +9,13 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader')
 });
 
+fis.match('*.scss', {
+    // fis-parser-less 插件进行解析
+    parser: fis.plugin('scss'),
+    // .less 文件后缀构建后被改成 .css 文件
+    rExt: '.css'
+})
+
 //加载方式 cmd同步加载  amd异步加载
 fis.hook('cmd');
 
@@ -20,7 +27,8 @@ fis.match('/static/js/sea.js', {
 //公用部分
 var commCss = [
     '/static/css/comm.css',
-    '/modules/**.css'
+    '/modules/**.css',
+    '/modules/**.scss'
 ];
 var commJs = [
     "/static/js/sea.js",
