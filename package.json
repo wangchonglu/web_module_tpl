@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangchonglu/web_module_tpl.git"
+    "url": "git+https://github.com/BQ-Team/web_module_tpl.git"
   },
   "keywords": [
     "web前端模块化项目模板"
@@ -16,7 +16,7 @@
   "author": "chonglu.wang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wangchonglu/web_module_tpl/issues"
+    "url": "https://github.com/BQ-Team/web_module_tpl/issues"
   },
-  "homepage": "https://github.com/wangchonglu/web_module_tpl#readme"
+  "homepage": "https://github.com/BQ-Team/web_module_tpl#readme"
 }
