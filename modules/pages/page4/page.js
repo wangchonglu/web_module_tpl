@@ -1,4 +1,4 @@
- /**
+/**
  * Created by zyc on 2016/6/11.
  */
 
@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     var baseModule = require('baseModule');
     module.exports = $.extend({}, baseModule, {
         html:$(__inline("./page.html")),
-        title: "页面3",
+        title: "页面4",
         //数据
         data: {},
         //组件init 仅执行一次
@@ -29,12 +29,5 @@ define(function (require, exports, module) {
 
         }
 
+    });
 });
-});
- $(function(){
-     $('.choice i').toggle(function() {
-         $(this).addClass('default');
-     }, function() {
-         $(this).removeClass('default');
-     });
- })
