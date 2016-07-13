@@ -11,7 +11,7 @@ define(function (require, exports, module) {
         isDialogPage:true,
         hideDialog: function () {
             logger.log("隱藏模式窗口", this.title);
-            this.html.parent().removeClass(this.positionCss).parent().fadeOut();
+            this.html.parent().removeClass(this.positionCss).parent().fadeOut();//弹窗样式
             this.show = false;
         }
     });
