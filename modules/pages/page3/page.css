@@ -1,10 +1,3 @@
-*{
-    padding:0;
-    margin:0;
-}
-#header {
-    background-color: #fd9225;
-}
 body, h1, h2, h3, h4, dl, dt, dd, ul, ol, li, a, div, em, span, img, form, input, p, i {
     padding: 0;
     margin: 0;
@@ -74,6 +67,72 @@ html, body {
         font-size: 22px; } }
 @media all and (max-width: 320px) {
     html, body {
-        font-size: 20px; } }
+        font-size: 14px; } }
 
+#page2{
+    background-color: rosybrown;
+}
+#page3 .shop{
+    padding:10px;
+    border-bottom:1px solid #999999;
+    height:100px;
+    width:100%;
 
+}
+#page3 .shop .images{
+  ;
+}
+#page3 .shop img{
+    width:80px;
+    height:80px;
+    float:left;
+    border-radius: 5px;
+}
+#page3 .shop .message{
+     float:left;
+    margin-left:10px;
+}
+#page3 .shop .message h1{
+    font-weight:200;
+}
+#page3 .shop .message p{
+    margin-top:8px;
+    color:#999999;
+}
+#page3 .shop .choice{
+    position:absolute;
+    top: 80px;
+    right: 10px;
+}
+#page3 .shop .choice  i{
+   display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../../../static/images/radio.png) no-repeat;
+    background-size: cover;
+    position:absolute;
+    top: -30px;
+    right: 15px;
+}
+#page3 .shop .choice .default {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background:url(../../../static/images/radio-no.png)no-repeat;
+    background-size: cover;
+}
+#page3 .shop .choice span{
+    clear:both;
+    margin-bottom:0;
+    color:#999999;
+}
+
+#page3  button{
+    position: fixed ;
+    bottom:0;
+    background-color: red;
+    width:100%;
+    height:40px;
+    font-size:20px;
+    color:white;
+}
