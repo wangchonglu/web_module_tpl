@@ -33,6 +33,7 @@ var commCss = [
 var commJs = [
     "/static/js/sea.js",
     "/static/config/seaJS-config.js",
+    "/static/js/swiper.3.2.0.min.js",
     "/static/config/config.js",
     "/static/js/seajs-text.js",
     "/static/js/jquery.min.js",
