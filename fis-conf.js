@@ -27,13 +27,13 @@ fis.match('/static/js/sea.js', {
 //公用部分
 var commCss = [
     '/static/css/comm.css',
+    '/static/css/**.css',
     '/modules/**.css',
     '/modules/**.scss'
 ];
 var commJs = [
     "/static/js/sea.js",
     "/static/config/seaJS-config.js",
-    "/static/js/swiper.3.2.0.min.js",
     "/static/config/config.js",
     "/static/js/seajs-text.js",
     "/static/js/jquery.min.js",

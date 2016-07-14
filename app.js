@@ -5,7 +5,6 @@
 define(function (require, exports, module) {
 
     // 通过 require 引入依赖
-    window["$"] = window.jQuery = require('jquery');
     require("comm");//通用函数
 
     var mainDom = $("#main");

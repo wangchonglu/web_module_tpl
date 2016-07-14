@@ -8,53 +8,35 @@ define(function (require, exports, module) {
         title: "页面1",
         html: $(__inline("./page.html")),
         //数据
-        data: {
-
-        },
+        data: {},
         //组件init 仅执行一次
         ready: function (params) {
+
             //跳转
             this.jump();
             //图片上传
-           // this.selectImage();
+            // this.selectImage();
             //焦点图轮播
             this.swiperShow();
+            this.droploadInit();
             //数据绑定
-            this.dataBind(".itemTpl",this.data.list,".shopList");
+            this.dataBind(".itemTpl", this.data.list, ".shopList");
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {
             logger.log(this.title, ' load 完成,传递过来的参数：', params);
 
         },
-       // 点击跳转
+
+
+        // 点击跳转
         jump: function () {
             this.html.on("click", "li", function () {
                 showPage('/pages/page2', '123456789')
             });
         },
-        //file图片上传、拍照
-        //selectImage: function () {
-        //    var self = this;
-        //    this.dom.uploadFile.on("change", function () { //当input发生改变的时候，
-        //        debugger
-        //        var file = this.files[0];//图片只能上传一张
-        //
-        //        if (!file.type.match('image.*')) {   //判断是否是图片类型
-        //            alert('请选择图片');
-        //            return false;
-        //        }
-        //        var reader = new FileReader();//new 一个新的file对象
-        //        reader.onload = function () {  //当图片加载完成后
-        //            self.dom.img.attr('src', reader.result);//把当前转换的对象添加到img对象中
-        //        };
-        //        reader.readAsDataURL(file);//把读取到的图片编码成Data URL
-        //
-        //    });
-        //
-        //},
         //图片轮播
-        swiperShow: function (){
+        swiperShow: function () {
             var mySwiper = new Swiper(".swiper-container", {
                 direction: "horizontal",
                 loop: true,
@@ -62,7 +44,27 @@ define(function (require, exports, module) {
                 autoplayDisableOnInteraction: false,
                 pagination: ".swiper-pagination"
             })
-        }
+        },
+        //上拉下拉
+        droploadInit: function () {
+            this.html.dropload({
+                scrollArea: window,
+                loadDownFn: function (me) {
+                    logger.log("上拉");
+                    setTimeout(function(){
+                        me.resetload();
+                    },2000)
+                },
+                loadUpFn: function (me) {
+                    logger.log("下拉");
+                    setTimeout(function(){
+                        me.resetload();
+                    },2000)
+                }
+            });
+        },
+
+
     });
 });
 
