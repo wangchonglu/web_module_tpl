@@ -8,9 +8,123 @@
         <input type="text" placeholder="请选择地址">
         <a class="selectAddress"> >>>>>>> </a>
     </div>
-
     <div class="btn">
         <button>确认</button>
     </div>
-
+    <div class="page page-current pageOne">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <a class="icon-24 icon-24-back" href="javascript:history.go(-1)"></a>
+            <h1 class="title">批量工时设置</h1>
+            <span class="icon-24 icon-24-search2 search"></span>
+        </header>
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <!-- 工时单价 -->
+            <div class="lot-time">
+                <span class="time">工时单价：</span>
+               <span class="spanPrice">
+                   <input type="text" class="price">
+               </span>
+                <span class="carGrade">汽车等级如何划分？</span>
+            </div>
+            <div class="setting">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>标准服务</td>
+                        <td>等级</td>
+                        <td>工时(个)</td>
+                        <td>推算价格</td>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- 主体内容显示 -->
+            <div class="table-reserve"></div>
+            <div class="pad"></div>
+            <!-- 按钮 -->
+            <div class="btn-full">
+                <span>保存</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 其他的单个page内联页（如果有） -->
+<!-- 搜索页 -->
+<div class="page" id="router">
+    <div class="searchHistory">
+        <div class="item">
+            <span class="icon-16 icon-16-historySearch searchNone"></span>
+            <input type="text" class="fuzzyQuery" placeholder="标注服务名称/工时个数">
+            <span class="icon-16 icon-16-close cancel"></span>
+            <span class="close">取消</span>
+        </div>
+        <div class="searchCon">
+            <label>最近搜索</label>
+        </div>
+        <div class="searchend">
+            <label>小保养</label>
+        </div>
+        <div class="searchend">
+            <label>更换火花塞</label>
+        </div>
+        <div class="searchend">
+            <label>65</label>
+        </div>
+        <div class="btn">
+            <span>清空历史搜索记录</span>
+        </div>
+    </div>
+</div>
+<!-- 弹窗 -->
+<div id="shutOpen" style="display: none">
+    <div id="dialog">
+        <table class="table">
+            <!--<tr>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--<td></td>-->
+            <!--</tr>-->
+            <tr>
+                <td></td>
+                <td>轴距（米）</td>
+                <td>排量（升）</td>
+            </tr>
+            <tr>
+                <td>A00</td>
+                <td><2.2</td>
+                <td><1</td>
+            </tr>
+            <tr>
+                <td>A0</td>
+                <td>2.2-2.3</td>
+                <td>1-1.3</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>2.3-2.45</td>
+                <td>1.3-1.6</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>2.45-2.6</td>
+                <td>1.6-2.4</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>2.6-2.8</td>
+                <td>2.3-3.0</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>>2.8</td>
+                <td>>3.0</td>
+            </tr>
+        </table>
+        <div class="btn-ant">
+            <span>确定</span>
+        </div>
+    </div>
+</div>
 </div>

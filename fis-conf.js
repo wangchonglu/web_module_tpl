@@ -9,9 +9,9 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader')
 });
 
-fis.match('*.scss', {
+fis.match('*.less', {
     // fis-parser-less 插件进行解析
-    parser: fis.plugin('scss'),
+    parser: fis.plugin('less-2.x'),
     // .less 文件后缀构建后被改成 .css 文件
     rExt: '.css'
 })
@@ -28,7 +28,7 @@ fis.match('/static/js/sea.js', {
 var commCss = [
     '/static/css/comm.css',
     '/modules/**.css',
-    '/modules/**.scss'
+    '/modules/**.less'
 ];
 var commJs = [
     "/static/js/sea.js",

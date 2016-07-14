@@ -9,26 +9,6 @@ define(function (require, exports, module) {
         html: $(__inline("./page.html")),
         //数据
         data: {
-            list: [
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00}
-            ]
         },
         //组件init 仅执行一次
         ready: function (params) {
@@ -50,6 +30,7 @@ define(function (require, exports, module) {
                 showPage('/pages/page2', '123456789')
             });
         },
+        //图片上传，拍照
         selectImage: function () {
             var self = this;
             this.dom.uploadFile.on("change", function () { //当input发生改变的时候，
