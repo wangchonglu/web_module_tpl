@@ -7,12 +7,9 @@ seajs.config({
     alias: {
         "config": "/static/config/config",
         "jquery": "/static/js/jquery.min",
-        //"swiper":"/static/js/swiper.3.2.0.min",
-        "template": "/static/js/doT.min",
         "router": "/static/js/director",
         "comm": "/static/js/comm",
-        "baseModule":'/modules/common/basePage',
-        "baseDialogModule":'/modules/common/baseDialogPage'
+        "baseModule":'/modules/common/basePage'
     }
 });
 
