@@ -3,8 +3,8 @@
  */
 
 define(function (require, exports, module) {
-    var baseModule = require('baseModule');
-    module.exports = $.extend({}, baseModule, {
+    var baseDialogModule = require('baseDialogModule');
+    module.exports = $.extend({}, baseDialogModule, {
         html:$(__inline("./page.html")),
         title: "页面3",
         //数据
@@ -21,10 +21,10 @@ define(function (require, exports, module) {
             logger.log(this.title, ' load');
         },
         initEvent: function () {
-
+            var self = this;
             logger.log(this.title, 'ready , 事件初始化');
-            this.html.on("click", ".topage1", function () {
-                jumpPage('#pages/page1', '123456789')
+            this.html.on("click", ".closeDialog", function () {
+                self.hideDialog();
             });
 
         }

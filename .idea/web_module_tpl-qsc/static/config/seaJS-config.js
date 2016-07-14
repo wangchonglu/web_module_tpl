@@ -7,11 +7,9 @@ seajs.config({
     alias: {
         "config": "/static/config/config",
         "jquery": "/static/js/jquery.min",
-        "template": "/static/js/doT.min",
         "router": "/static/js/director",
         "comm": "/static/js/comm",
-        "baseModule":'/modules/common/basePage',
-        "baseDialogModule":'/modules/common/baseDialogPage'
+        "baseModule":'/modules/common/basePage'
     }
 });
 

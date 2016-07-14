@@ -1,62 +1,8 @@
-#page1 image {
-    width: 100%;
-    height: 200px;
-}
-#page1.list{
-    border-bottom:1px solid #999999;
-}
-#page1 .list li{
-     padding:10px;
-    display:-webkit-box ;
-    height: 120px;
-    border-bottom:1px solid #999999;
+
+#page1{
 
 }
-#page1 .list .shopImage{
-    width:120px;
 
-}
-#page1 .list li img{
-    width:100px;
-    height:100px;
-    border-radius: 5px;
-}
-#page1 .list .blurb{
-    -webkit-box-flex:1;
-    font-size: .8rem;
-}
-#page1 .list .blurb p{
-    word-wrap:break-word;
-}
-#page1 .instruction {
-     margin-top:10px;
-    font-size: 0.8rem;
-}
-#page1 .instruction span{
-    border:1px solid ;
-    border-radius: 3px;
-    font-size: .7rem;
-    margin-right:7px;
-}
-#page1 .instruction .ins-1{
-    color:green;
-}
-#page1 .instruction .ins-2{
-    color:red;
-}
-#page1 .instruction .ins-3{
-    color:#fd9225;
-
-}
-#page1 .price{
-    position:relative;
-    margin-bottom:0;
-    color:#999999;
-    margin-top:10px;
-}
-#page1 .price .price-1{
-    color:#fd9225;
-    font-size:0.8rem;
-}
-
-
+#page1 li{
+    padding:10px
+ }

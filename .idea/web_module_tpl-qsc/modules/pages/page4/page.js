@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     var baseModule = require('baseModule');
     module.exports = $.extend({}, baseModule, {
         html:$(__inline("./page.html")),
-        title: "页面2",
+        title: "页面4",
         //数据
         data: {},
         //组件init 仅执行一次
@@ -21,14 +21,11 @@ define(function (require, exports, module) {
             logger.log(this.title, ' load');
         },
         initEvent: function () {
+
             logger.log(this.title, 'ready , 事件初始化');
             this.html.on("click", ".topage1", function () {
-                showPage('#pages/page1', '123456789');
+                jumpPage('#pages/page1', '123456789')
             });
-            this.html.on("click", ".selectAddress", function () {
-                showDialogPage("pages/page3");
-            });
-
 
         }
 

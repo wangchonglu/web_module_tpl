@@ -23,13 +23,8 @@ define(function (require, exports, module) {
         initEvent: function () {
             logger.log(this.title, 'ready , 事件初始化');
             this.html.on("click", ".topage1", function () {
-                showPage('#pages/page1', '123456789');
+                jumpPage('#pages/page1', '123456789')
             });
-            this.html.on("click", ".selectAddress", function () {
-                showDialogPage("pages/page3");
-            });
-
-
         }
 
     });
