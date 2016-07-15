@@ -2,12 +2,19 @@
     padding:0;
     margin:0
 }
+a{
+    text-decoration: none;
+}
 body{
     font-size: 20px;
-    background: #cccccc;
+    background: #ffffff;
 }
 #header{
-    background-color: dodgerblue;
+    background-color: #4791FF;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    text-align: center;
 }
 #header a{
     display: block;
@@ -20,7 +27,13 @@ body{
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    margin: 10px
+    margin: 10px;
+    position: absolute;
+    top: 4px;
+}
+#header span{
+    font-size: 20px;
+    color: #ffffff;
 }
 .hide{
     display: none;

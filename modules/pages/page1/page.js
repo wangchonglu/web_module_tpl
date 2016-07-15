@@ -26,7 +26,7 @@ define(function (require, exports, module) {
 
         },
         jump: function () {
-            this.html.on("click", "li", function () {
+            this.html.on("click", ".workingHours", function () {
                 showPage('/pages/page2', '123456789')
             });
         },
