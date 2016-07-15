@@ -1,7 +1,158 @@
 #order{
+  background-color: #ffffff;
   .process{
-    height:40px;
-    background-color: #0066ee ;
+    height:80px;
+    .status{
+      li{
+        display: inline;
 
+      }
+    }
+    .status-step{
+       li{
+         float: left;
+         color: #fff;
+         font-size: 1rem;
+         text-align: center;
+         line-height:1.5rem;
+         margin-bottom: 0;
+       }
+        .step-1{
+          height:1.5rem;
+          line-height:1.5rem;
+          width:1.5rem;
+          background-color: #C1C1C1;
+          border-radius:20px;
+
+        }
+        .step-2{
+          margin-top:.7rem;
+          width:3rem ;
+          height:.1rem;
+          background-color: #C1C1C1;
+        }
+
+
+    }
+  }
+  .details{
+    position: relative ;
+    top:10px;
+    border-top:1px solid #999999;
+    .order-nb{
+      height:40px;
+      width:100%;
+      display: -webkit-box;
+      .nb{
+        -webkit-box-flex:1;
+      }
+      .number{
+        -webkit-box-flex:2;
+        font-size:.8rem;
+      }
+      .tu{
+        -webkit-box-flex:1;
+        color: #FC7905;
+      }
+    }
+    .detail-nb{
+      display: -webkit-box;
+      width:100%;
+      height:80px;
+      .detail-img{
+        width:80px;
+        height:80px;
+      }
+      .detail-p{
+        word-wrap: break-word;
+        -webkit-box-flex:1;
+        font-size:.7rem;
+        span{
+          color:#C1C1C1;
+          font-size:.7rem;
+        }
+      }
+      .detail-n{
+       width:50px;
+        span{
+          color:#C1C1C1;
+          font-size:.7rem;
+        }
+      }
+    }
+    .totals{
+      display: -webkit-box;
+      width:100%;
+      height:60px;
+      font-size:.8rem;
+      .check{
+        -webkit-box-flex:1;
+      }
+      .empty{
+        -webkit-box-flex:1;
+      }
+      .total{
+        -webkit-box-flex:1;
+        span{
+          color:#FB9124;
+        }
+      }
+    }
+  }
+  .serves{
+    .code{
+      width:100%;
+      height:4.5rem;
+      font-size:1rem;
+      border-bottom:1px solid #999999;
+       .code-1{
+
+       }
+      .code-2{
+
+      }
+      .code-3{
+
+      }
+    }
+    .ser-store{
+      height:1.2rem;
+
+      span{
+        color:#FB7806;
+      }
+    }
+    .ser-point{
+      display:-webkit-box;
+        .adders{
+          -webkit-box-flex:6;
+
+        }
+      .call{
+        width:3rem;
+        border-left:1px solid #999999;
+        height:2.5rem;
+        background:url("../../../static/images/chinaz2.png")no-repeat;
+      }
+    }
+  }
+  .feedback{
+    height:2.3rem;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    background-color: #FFFFFF;
+    a{
+      display:block;
+      height:2.2rem;
+      width:6.4rem;
+      border-radius:3px;
+      border:1px solid #999999;
+      float:right;
+      margin-right:1rem;
+      font-size:1.5rem;
+      font-family: "Microsoft Yahei";
+      color:black;
+    }
   }
 }
