@@ -4,6 +4,8 @@
 
 define(function (require, exports, module) {
     var baseModule = require('baseModule');
+    var store = require("store");
+    var util = require("util");
     module.exports = $.extend({}, baseModule, {
         title: "页面1",
         html: $(__inline("./page.html")),
@@ -36,12 +38,16 @@ define(function (require, exports, module) {
             this.jump();
             this.selectImage();
 
+            util.logger.warn(store.baoxianType);
+            store.baoxianType["1"] = "AA保险";
+            util.logger.warn(store.baoxianType);
+
             //数据绑定
             this.dataBind(".itemTpl",this.data.list,".shopList");
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {
-            logger.log(this.title, ' load 完成,传递过来的参数：', params);
+            util.logger.log(this.title, ' load 完成,传递过来的参数：', params);
 
 
         },

@@ -4,6 +4,7 @@
 
 define(function (require, exports, module) {
     var baseDialogModule = require('baseDialogModule');
+    var util = require("util");
     module.exports = $.extend({}, baseDialogModule, {
         html:$(__inline("./page.html")),
         title: "页面3",
@@ -13,17 +14,19 @@ define(function (require, exports, module) {
         ready: function (params) {
 
             //事件初始化
-            this.initEvent();
+            this.initEvent(params);
 
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {
-            logger.log(this.title, ' load');
+            this.params = params;
+            util.logger.log(this.title, ' load');
         },
-        initEvent: function () {
+        initEvent: function (params) {
             var self = this;
-            logger.log(this.title, 'ready , 事件初始化');
+            util.logger.log(this.title, 'ready , 事件初始化');
             this.html.on("click", ".closeDialog", function () {
+                self.params.ok("abcdefg");
                 self.hideDialog();
             });
 

@@ -11,7 +11,7 @@ fis.match('::packager', {
 
 fis.match('*.scss', {
     // fis-parser-less 插件进行解析
-    parser: fis.plugin('scss'),
+    parser: fis.plugin('node-sass'),
     // .less 文件后缀构建后被改成 .css 文件
     rExt: '.css'
 })
