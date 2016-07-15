@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     var baseModule = require('baseModule');
     var util = require("util");
     module.exports = $.extend({}, baseModule, {
-        html:$(__inline("./page.html")),
+        html: $(__inline("./page.html")),
         title: "页面2",
         //数据
         data: {},
@@ -20,24 +20,27 @@ define(function (require, exports, module) {
         //每次切换进入到该组件 都会被执行
         load: function (params) {
             util.logger.log(this.title, ' load');
+            var store = require("store");
+            this.dom.address.val(store.baoxianType["1"]);
         },
-        initEvent: function () {
-            util.logger.log(this.title, 'ready , 事件初始化');
-            var self = this;
-            this.html.on("click", ".topage1", function () {
-                showPage('#pages/page1', '123456789');
-            });
-            this.html.on("click", ".selectAddress", function () {
-                showDialogPage("pages/page3",{
-                    ok:function(data){
-                        self.dom.address.val(data);
-                        util.logger.log("获取到的值：",data);
-                    }
+        methods: {
+            initEvent: function () {
+                util.logger.log(this.title, 'ready , 事件初始化');
+                var self = this;
+                this.html.on("click", ".topage1", function () {
+                    showPage('#pages/page1', '123456789');
                 });
-            });
+                this.html.on("click", ".selectAddress", function () {
+                    showDialogPage("pages/page3", {
+                        ok: function (data) {
+                            self.dom.address.val(data);
+                            util.logger.log("获取到的值：", data);
+                        }
+                    });
+                });
 
 
+            }
         }
-
     });
 });

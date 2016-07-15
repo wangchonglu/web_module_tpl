@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     var baseDialogModule = require('baseDialogModule');
     var util = require("util");
     module.exports = $.extend({}, baseDialogModule, {
-        html:$(__inline("./page.html")),
+        html: $(__inline("./page.html")),
         title: "页面3",
         //数据
         data: {},
@@ -22,14 +22,16 @@ define(function (require, exports, module) {
             this.params = params;
             util.logger.log(this.title, ' load');
         },
-        initEvent: function (params) {
-            var self = this;
-            util.logger.log(this.title, 'ready , 事件初始化');
-            this.html.on("click", ".closeDialog", function () {
-                self.params.ok("abcdefg");
-                self.hideDialog();
-            });
+        methods: {
+            initEvent: function (params) {
+                var self = this;
+                util.logger.log(this.title, 'ready , 事件初始化');
+                this.html.on("click", ".closeDialog", function () {
+                    self.params.ok("abcdefg");
+                    self.hideDialog();
+                });
 
+            }
         }
 
     });

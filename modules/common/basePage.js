@@ -21,6 +21,13 @@ define(function (require, exports, module) {
                 var key = this.getAttribute("id");
                 self.dom[key] = $(this);
             });
+
+            //将methods里面的函数复制一份到模块上  方便在具体模块中用this.abc()调用
+            for (var funName in this.methods) {
+                self[funName] = self.methods[funName];
+            }
+            delete this.methods;//复制完后  删除methods属性，保持模块干净
+
         },
         //每次切换进入到该组件 都会被执行
         baseLoad: function (params) {
