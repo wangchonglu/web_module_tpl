@@ -41,7 +41,6 @@ define(function (require, exports, module) {
         });
     }
 
-    var _router = require("router");
     //路由配置
     var routesConfig = {
         "/:moudle/:page/?((\w|.)*)": {
@@ -64,7 +63,7 @@ define(function (require, exports, module) {
             }
         }
     };
-    var router = new _router.Router(routesConfig);
+    var router = new Router(routesConfig);
     var homePage = localStorage.getItem("currentMoudleHash") || "/pages/page1";
     router.setRoute(homePage);//设置默认首页
     router.init();//路由初始化
@@ -102,7 +101,7 @@ define(function (require, exports, module) {
             window.currentDialogModule = mod;//保存当前模块
 
             //显示模块内容
-            mainDialogContent.html(mod.html).addClass(cssClass).parent().fadeIn("fast");
+            mainDialogContent.html(mod.html).addClass(cssClass).parent().show("fast");
 
             !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
             !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化

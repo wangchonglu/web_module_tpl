@@ -27,9 +27,7 @@ define(function (require, exports, module) {
         }
         return result;
     }
-
     var config = require("config");
-
     //常用工具
     module.exports = {
         //日志
@@ -71,7 +69,6 @@ define(function (require, exports, module) {
                 url: "",
                 data: {}
             }, options);
-
             $.ajax({
                 type: opts.type,
                 url: config.serviceHost + opts.url,
@@ -88,11 +85,8 @@ define(function (require, exports, module) {
                         $.isFunction(opts.success) && opts.success(data);
                     }
                     else {
-
                         (data.errorMsg) && alert(data.errorMsg);
-
                         $.isFunction(opts.error) && opts.error(data);
-
                     }
                 },
                 error: function (xhr, exception) {

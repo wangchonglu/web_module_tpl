@@ -61,7 +61,6 @@ define(function (require, exports, module) {
             selectImage: function () {
                 var self = this;
                 this.dom.uploadFile.on("change", function () { //当input发生改变的时候，
-                    debugger
                     var file = this.files[0];//图片只能上传一张
 
                     if (!file.type.match('image.*')) {   //判断是否是图片类型

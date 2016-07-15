@@ -5,10 +5,10 @@
 define(function (require, exports, module) {
     var baseDialogModule = require('baseDialogModule');
     var util = require("util");
+    //数据
     module.exports = $.extend({}, baseDialogModule, {
         html: $(__inline("./page.html")),
         title: "页面3",
-        //数据
         data: {},
         //组件init 仅执行一次
         ready: function (params) {
