@@ -14,15 +14,3 @@ seajs.config({
         "baseDialogModule":'/modules/common/baseDialogPage'
     }
 });
-
-
-var list = [
-    'pages/page1',
-    'pages/page2',
-    'pages/page4',
-    'pages/page2',
-    'pages/page4',
-    'pages/page2',
-    'pages/page4'
-
-];

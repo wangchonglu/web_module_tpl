@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/BQ-Team/web_module_tpl/issues"
   },
-  "homepage": "https://github.com/BQ-Team/web_module_tpl#readme"
+  "homepage": "https://github.com/BQ-Team/web_module_tpl#readme",
+  "dependencies": {
+    "director": "^1.2.8",
+    "dot": "^1.0.3",
+    "zepto": "^1.2.0"
+  }
 }
