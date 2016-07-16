@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "web前端模块化项目模板",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "build_dev":"fis3 release -wL",
+    "build_prod":"fis3 release prod -d c:/build/web_module_tpl"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BQ-Team/web_module_tpl.git"

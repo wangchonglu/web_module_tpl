@@ -10,41 +10,34 @@ define(function (require, exports, module) {
         html: $(__inline("./page.html")),
         //数据
         data: {
-            list: [
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00},
-                {name: "商品：美食烧鹅", price: 100.00}
-            ]
+            list: []
         },
         //组件init 仅执行一次
         ready: function (params) {
+            var self = this;
             //跳转
             this.jump();
             this.selectImage();
-
 
             var store = require("store");
             util.logger.warn(store.baoxianType);
             store.baoxianType["1"] = "AA保险";
 
+            util.ajaxRequest({
+                url: "shop/list",
+                data: {
+                    pageSize: 10,
+                    city: 10001,
+                    page: 1
+                },
+                success: function (data) {
+                    self.data.list = data.data;
+                    //数据绑定
+                    self.dataBind(".itemTpl", self.data.list, ".shopList");
+                }
+            });
 
-            //数据绑定
-            this.dataBind(".itemTpl", this.data.list, ".shopList");
+
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {

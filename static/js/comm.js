@@ -27,6 +27,8 @@ define(function (require, exports, module) {
         }
         return result;
     }
+
+
     var config = require("config");
     //常用工具
     module.exports = {

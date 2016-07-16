@@ -57,14 +57,15 @@ define(function (require, exports, module) {
             },
             on: function (moudle, page, data) {
                 //记录当前模块
-                localStorage.setItem("currentMoudleHash",location.hash.substr(1));
+                sessionStorage.setItem("currentMoudleHash",location.hash.substr(1));
                 //解析加载当前模块
                 routeRequire(moudle, page, data);
             }
         }
     };
+
     var router = new Router(routesConfig);
-    var homePage = localStorage.getItem("currentMoudleHash") || "/pages/page1";
+    var homePage = sessionStorage.getItem("currentMoudleHash") || "/pages/page1";
     router.setRoute(homePage);//设置默认首页
     router.init();//路由初始化
 

@@ -9,7 +9,9 @@ define(function (require, exports, module) {
         html: undefined,//模块html
         _isInit: false,//是否初始化
         //数据
-        data: {},
+        data: {
+
+        },
         //组件init 仅执行一次
         baseReady: function (params) {
             util.logger.log("组件初始化baseReady ", this.title);
@@ -34,7 +36,11 @@ define(function (require, exports, module) {
             util.logger.log("组件加载baseLoad ", this.title);
             window.document.title = this.title;
 
+
+
+
         },
+        //数据-模板 绑定
         dataBind: function (tplFilter, data, targetFilter) {
             var tpl = this.html.filter(tplFilter).html();
             var listHtml = doT.template(tpl)(data);
