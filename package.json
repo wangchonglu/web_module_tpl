@@ -20,8 +20,6 @@
   "dependencies": {
     "director": "^1.2.8",
     "dot": "^1.0.3",
-    "jquery": "^3.1.0",
-    "seajs": "^3.0.2",
     "zepto": "^1.2.0"
   }
 }
