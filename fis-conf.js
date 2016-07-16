@@ -14,12 +14,12 @@ fis.match('*.scss', {
     parser: fis.plugin('node-sass'),
     // .less 文件后缀构建后被改成 .css 文件
     rExt: '.css'
-})
+});
 
 //加载方式 cmd同步加载  amd异步加载
 fis.hook('cmd');
 
-//非模块的文件
+//非模块的文件n
 fis.match('/static/js/sea.js', {
     isMod: false
 });
