@@ -9,9 +9,9 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader')
 });
 
-fis.match('*.less', {
+fis.match('*.scss', {
     // fis-parser-less 插件进行解析
-    parser: fis.plugin('less-2.x'),
+    parser: fis.plugin('node-sass'),
     // .less 文件后缀构建后被改成 .css 文件
     rExt: '.css'
 })
@@ -28,14 +28,15 @@ fis.match('/static/js/sea.js', {
 var commCss = [
     '/static/css/comm.css',
     '/modules/**.css',
-    '/modules/**.less'
+    '/modules/**.scss'
 ];
 var commJs = [
     "/static/js/sea.js",
-    "/node_modules/director/build/director.min.js",
-    "/node_modules/zepto/dist/zepto.min.js",
-    "/node_modules/dot/doT.min.js",
+    "/static/config/seaJS-config.js",
     "/static/config/config.js",
+    "/node_modules/zepto/dist/zepto.min.js",
+    "/node_modules/director/build/director.min.js",
+    "/node_modules/dot/doT.min.js",
     '/app.js'
 ];
 

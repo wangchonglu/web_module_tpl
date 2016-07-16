@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "web前端模块化项目模板",
   "main": "app.js",
-  "scripts": {
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BQ-Team/web_module_tpl.git"
@@ -22,6 +20,8 @@
   "dependencies": {
     "director": "^1.2.8",
     "dot": "^1.0.3",
+    "jquery": "^3.1.0",
+    "seajs": "^3.0.2",
     "zepto": "^1.2.0"
   }
 }

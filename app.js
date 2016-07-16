@@ -5,8 +5,7 @@
 define(function (require, exports, module) {
 
     // 通过 require 引入依赖
-    window["$"] = window.jQuery = require('jquery');
-    require("comm");//通用函数
+    var util = require("util");//通用函数
 
     var mainDom = $("#main");
     var mainDialogContent = $("#dialogBox .dialogContent");
@@ -20,7 +19,7 @@ define(function (require, exports, module) {
     //路由模块跳转请求
     function routeRequire(moudle, page, data) {
 
-        logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
+        util.logger.log("加载模块：{0}/{1}  ,参数：{2}".format(moudle, page, data));
         var moduleJs = "./modules/{0}/{1}/page.js".format(moudle, page);
         //加载动态数据，需用async
         require.async([moduleJs], function (mod) {
@@ -42,7 +41,6 @@ define(function (require, exports, module) {
         });
     }
 
-    var _router = require("router");
     //路由配置
     var routesConfig = {
         "/:moudle/:page/?((\w|.)*)": {
@@ -58,12 +56,16 @@ define(function (require, exports, module) {
                 }
             },
             on: function (moudle, page, data) {
+                //记录当前模块
+                localStorage.setItem("currentMoudleHash",location.hash.substr(1));
+                //解析加载当前模块
                 routeRequire(moudle, page, data);
             }
         }
     };
-    var router = new _router.Router(routesConfig);
-    router.setRoute("/pages/page1");//设置默认首页
+    var router = new Router(routesConfig);
+    var homePage = localStorage.getItem("currentMoudleHash") || "/pages/page1";
+    router.setRoute(homePage);//设置默认首页
     router.init();//路由初始化
 
     //跳转页面
@@ -78,7 +80,7 @@ define(function (require, exports, module) {
      * @position 弹出框口位置，枚举值：center、top、bottom .默认为center
      */
     window.showDialogPage = function (url, data, position) {
-        logger.log("加载弹出模块：{0}  ,参数：{1}".format(url, data));
+        util.logger.log("加载弹出模块：{0}  ,参数：{1}".format(url, data));
 
         var positionCssClass = {
             top: "positionTop",
@@ -99,7 +101,7 @@ define(function (require, exports, module) {
             window.currentDialogModule = mod;//保存当前模块
 
             //显示模块内容
-            mainDialogContent.html(mod.html).addClass(cssClass).parent().fadeIn("fast");
+            mainDialogContent.html(mod.html).addClass(cssClass).parent().show("fast");
 
             !mod._isInit && $.isFunction(mod.baseReady) && mod.baseReady(data);//父组件初始化
             !mod._isInit && $.isFunction(mod.ready) && mod.ready(data);//组件初始化
