@@ -5,13 +5,14 @@
 define(function (require, exports, module) {
 
     var baseModule = require('baseModule');
+    var util = require("util");
     module.exports = $.extend({}, baseModule, {
         //组件init 仅执行一次
         show:false,
         isDialogPage:true,
         hideDialog: function () {
-            logger.log("隱藏模式窗口", this.title);
-            this.html.parent().removeClass(this.positionCss).parent().fadeOut();
+            util.logger.log("隱藏模式窗口", this.title);
+            this.html.parent().removeClass(this.positionCss).parent().hide();
             this.show = false;
         }
     });

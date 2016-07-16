@@ -35,9 +35,9 @@ var commJs = [
     "/static/js/sea.js",
     "/static/config/seaJS-config.js",
     "/static/config/config.js",
-    "/static/js/seajs-text.js",
-    "/static/js/jquery.min.js",
-    "/static/js/director.js",
+    "/node_modules/zepto/dist/zepto.min.js",
+    "/node_modules/director/build/director.min.js",
+    "/node_modules/dot/doT.min.js",
     '/app.js'
 ];
 
