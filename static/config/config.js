@@ -9,8 +9,7 @@ define(function (require, exports, module) {
 
     module.exports = {
         isDebug: true,// 是否开启调试模式,调试模式开启会打印日志信息
-        serviceHost: "http://192.168.100.25:8080/services/",
-
+        serviceHost: "http://rap.taobao.org/mockjsdata/5517/",
     };
 
 
