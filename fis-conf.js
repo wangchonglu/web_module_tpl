@@ -11,7 +11,7 @@ fis.match('::packager', {
 
 fis.match('*.scss', {
     // fis-parser-less 插件进行解析
-    parser: fis.plugin('scss'),
+    parser: fis.plugin('node-sass'),
     // .less 文件后缀构建后被改成 .css 文件
     rExt: '.css'
 })
@@ -34,9 +34,9 @@ var commJs = [
     "/static/js/sea.js",
     "/static/config/seaJS-config.js",
     "/static/config/config.js",
-    "/static/js/seajs-text.js",
-    "/static/js/jquery.min.js",
-    "/static/js/director.js",
+    "/node_modules/zepto/dist/zepto.min.js",
+    "/node_modules/director/build/director.min.js",
+    "/node_modules/dot/doT.min.js",
     '/app.js'
 ];
 
