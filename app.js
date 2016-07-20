@@ -112,3 +112,14 @@ define(function (require, exports, module) {
 });
 
 
+var str = "fllajsfjJFLASDJFGJASF";
+var m = 0,n=0;
+
+for(var i=0;i<str.length;i++){
+    if(str[i]==str[i].toUpperCase()){
+        m++;
+    }else{
+        n++;
+    }
+}
+
