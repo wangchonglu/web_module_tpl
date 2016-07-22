@@ -4,7 +4,7 @@
 
 define(function (require, exports, module) {
     var baseModule = require('baseModule');
-
+    var util = require("util");//通用函数
     module.exports = $.extend({}, baseModule, {
         title: "页面1",
         html: $(__inline("./page.html")),
@@ -22,12 +22,12 @@ define(function (require, exports, module) {
         },
         //每次切换进入到该组件 都会被执行
         load: function (params) {
-            logger.log(this.title, ' load 完成,传递过来的参数：', params);
+            util.logger.log(this.title, ' load 完成,传递过来的参数：', params);
 
 
         },
         jump: function () {
-            this.html.on("click", ".workingHours", function () {
+            this.html.on("click", ".peopleManage", function () {
                 showPage('/pages/page2', '123456789')
             });
         },
@@ -35,9 +35,7 @@ define(function (require, exports, module) {
         selectImage: function () {
             var self = this;
             this.dom.uploadFile.on("change", function () { //当input发生改变的时候，
-                debugger
                 var file = this.files[0];//图片只能上传一张
-
                 if (!file.type.match('image.*')) {   //判断是否是图片类型
                     alert('请选择图片');
                     return false;

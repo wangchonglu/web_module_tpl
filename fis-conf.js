@@ -34,7 +34,7 @@ var commJs = [
     "/static/js/sea.js",
     "/static/config/seaJS-config.js",
     "/static/config/config.js",
-    "/node_modules/zepto/dist/zepto.min.js",
+    "/node_modules/zepto/dist/zepto.js",
     "/node_modules/director/build/director.min.js",
     "/node_modules/dot/doT.min.js",
     '/app.js'
@@ -58,7 +58,8 @@ fis.media("prod")
         packager: fis.plugin('map', {
             '/static/all.css': commCss,
             '/static/all.js': commJs.concat([
-                '/static/**.js',
+                '/sta' +
+                '/**.js',
                 '/modules/**.js'
             ])
         })

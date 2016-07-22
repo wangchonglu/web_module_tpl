@@ -27,7 +27,7 @@ define(function (require, exports, module) {
                 var self = this;
                 util.logger.log(this.title, 'ready , 事件初始化');
                 this.html.on("click", ".closeDialog", function () {
-                    self.params.ok("abcdefg");
+                //    self.params.ok("abcdefg");
                     self.hideDialog();
                 });
 

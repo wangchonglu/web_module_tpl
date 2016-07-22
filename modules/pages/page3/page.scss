@@ -1,0 +1,68 @@
+#page3 {
+  .shoppingImg {
+    img {
+      width: 100%;
+    }
+  }
+  .storePresent {
+    .storeImg {
+      display: inline-block;
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+    .detail {
+      float: right;
+      margin-top:0.55rem;
+      margin-right: 3.4rem;
+      h3 {
+        font-size: 16px;
+      }
+      .produceDetail {
+        span{
+          display: inline-block;
+          font-size: 0.7rem;
+        }
+        .one{
+          width: 2rem;
+          height: 0.9rem;
+          line-height: 0.9rem;
+          text-align: center;
+          color:#5BA1AB;
+          border:1px solid #5BA1AB;
+        }
+        .two{
+          width: 3rem;
+          height: 0.9rem;
+          line-height: 0.9rem;
+          text-align: center;
+          color:#7C7DAB;
+          border:1px solid #7C7DAB;
+        }
+        .three{
+          width: 2rem;
+          line-height: 0.9rem;
+          text-align: center;
+          color:#C3B18E;
+          border:1px solid #C3B18E;
+        }
+      }
+      .storeNum{
+        margin-top: 0.4rem;
+        position: relative;
+        .tel{
+          color:#fe4a3c;
+          font-size: 0.9rem;
+        }
+        .storeKm{
+          font-size: 0.7rem;
+          color: #333333;
+          position:absolute;
+          right: 1rem;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,73 @@
+#page2 {
+  em {
+    font-style: normal;
+  }
+  .storeList {
+    margin-top: 1rem;
+    border-bottom: 1px solid #e7e7e7;
+    .storePresent {
+      margin-bottom: 0.5rem;
+      .storeImg {
+        display: inline-block;
+        img {
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+      .address {
+        float: right;
+        margin-right: 6rem;
+        margin-top: 0.5rem;
+        position: relative;
+        .radio{
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background: url(../../../static/images/icon-11.png) no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: -63px;
+          top: 10px;
+        }
+        .active{
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          background: url(../../../static/images/icon-12.png) no-repeat;
+          background-size: cover;
+          position: absolute;
+          right: -63px;
+          top: 10px;
+        }
+        h3 {
+          font-size: 18px;
+          color: #333333;
+        }
+        p {
+          font-size: 15px;
+          color: #666666;
+          margin-top: 0.5rem;
+        }
+        .storeNum {
+          font-size: 15px;
+          color: #999;
+          margin-top: 0.5rem;
+          .storeKm {
+            position: absolute;
+            right: -5rem;
+          }
+        }
+      }
+    }
+  }
+  .btn{
+    width: 100%;
+    line-height: 2.5rem;
+    position: fixed;
+    bottom: 0;
+    font-size: 1rem;
+    color: #ffffff;
+    background:#fe4a3c;
+    text-align: center;
+  }
+}
