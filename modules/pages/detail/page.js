@@ -8,7 +8,7 @@ define(function (require, exports, module) {
     //数据
     module.exports = $.extend({}, baseDialogModule, {
         html: $(__inline("./page.html")),
-        title: "页面3",
+        title: "商品详情",
         data: {},
         //组件init 仅执行一次
         ready: function (params) {

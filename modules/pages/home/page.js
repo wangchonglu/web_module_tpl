@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     var baseModule = require('baseModule');
     var util = require("util");//通用函数
     module.exports = $.extend({}, baseModule, {
-        title: "页面1",
+        title: "服务选择",
         html: $(__inline("./page.html")),
         //数据
         data: {

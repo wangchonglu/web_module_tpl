@@ -24,12 +24,6 @@ define(function (require, exports, module) {
          * */
         initEvent: function () {
             util.logger.log(this.title, 'ready , 事件初始化');
-
-        },
-        /** 效果切换
-         * */
-        changeEvent: function(){
-
         },
     })
 });

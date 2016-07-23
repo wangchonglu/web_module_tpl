@@ -1,7 +1,6 @@
 /**
  * Created by zyc on 2016/6/11.
  */
-
 define(function (require, exports, module) {
     var baseModule = require('baseModule');
     var util = require("util");
@@ -17,8 +16,6 @@ define(function (require, exports, module) {
         ready: function (params) {
             //事件初始化
             this.initEvent();
-            //效果切换
-            this.changeEvent();
             //上拉，下拉刷新
             this.droploadInit();
         },
@@ -30,25 +27,23 @@ define(function (require, exports, module) {
          * */
         initEvent: function () {
             util.logger.log(this.title, 'ready , 事件初始化');
-            //
+            //页面跳转
             this.html.on("click", ".topage1", function () {
                 showPage('#pages/home', '123456789');
             });
-            //
+            //页面跳转
             this.html.on("click", ".selectAddress", function () {
                 //showDialogPage("pages/detail");
                 showPage('#pages/detail', '1234567');
             });
-        },
-
-        /** 效果切换
-         * */
-        changeEvent: function () {
+            /** 效果切换
+             * */
             this.html.on("click", "i", function () {
                 $(".storeList .address i").removeClass("active").addClass("radio");
                 $(this).removeClass("radio").addClass("active");
             })
         },
+
         /**
          *上拉，下拉，加载刷新
          **/
@@ -80,12 +75,9 @@ define(function (require, exports, module) {
                     if (!isReload) {
                         self.data.page++;
                     }
-
                 }
             });
         }
-
-
     })
 });
 
