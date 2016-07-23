@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     var util = require("util");
     module.exports = $.extend({}, baseModule, {
         html: $(__inline("./page.html")),
-        title: "页面2",
+        title: "订单",
         //数据
         data: {},
         //组件init 仅执行一次
@@ -24,21 +24,12 @@ define(function (require, exports, module) {
          * */
         initEvent: function () {
             util.logger.log(this.title, 'ready , 事件初始化');
-            this.html.on("click", ".topage1", function () {
-                showPage('#pages/page1', '123456789');
-            });
-            this.html.on("click", ".selectAddress", function () {
-                //showDialogPage("pages/page3");
-                showPage('#pages/page3', '1234567');
-            });
+
         },
         /** 效果切换
          * */
         changeEvent: function(){
-            this.html.on("click","i",function(){
-                $(".storeList .address i").removeClass("active").addClass("radio");
-                $(this).removeClass("radio").addClass("active");
-            })
+
         },
     })
 });

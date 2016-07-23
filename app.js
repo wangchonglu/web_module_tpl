@@ -64,7 +64,7 @@ define(function (require, exports, module) {
         }
     };
     var router = new Router(routesConfig);
-    var homePage = localStorage.getItem("currentMoudleHash") || "/pages/page1";
+    var homePage = localStorage.getItem("currentMoudleHash") || "/pages/home";
     router.setRoute(homePage);//设置默认首页
     router.init();//路由初始化
 
@@ -75,7 +75,7 @@ define(function (require, exports, module) {
 
     /**
      * 加載彈出框页面
-     * @url 模块path 例如pages/page3
+     * @url 模块path 例如pages/detail
      * @data 参数
      * @position 弹出框口位置，枚举值：center、top、bottom .默认为center
      */

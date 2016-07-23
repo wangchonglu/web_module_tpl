@@ -1,0 +1,30 @@
+<div id="list">
+    <div class="storeListBox">
+
+    </div>
+    <div class="btn selectAddress">
+        <span>确认</span>
+    </div>
+
+    <script type="html/tpl" class="storeItemTpl">
+    {{ for(var index in it) { var item=it[index]; }}
+        <div class="storeList">
+            <div class="storePresent">
+                <div class="storeImg">
+                    <img src="{{=item.pic}}" alt="">
+                </div>
+                <div class="address">
+                    <h3>{{=item.address}}</h3>
+                    <p>上海松江区泗泾镇699号</p>
+                    <i class="radio active"></i>
+                    <div class="storeNum">
+                        <span class="tel">{{=item.tpl}}</span>
+                        <span class="storeKm">{{=item.tpl}}<em>km</em></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{ } }}
+    </script>
+</div>
+

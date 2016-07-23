@@ -26,10 +26,10 @@ define(function (require, exports, module) {
             initEvent: function (params) {
                 var self = this;
                 util.logger.log(this.title, 'ready , 事件初始化');
-                this.html.on("click", ".closeDialog", function () {
-                //    self.params.ok("abcdefg");
-                    self.hideDialog();
-                });
+                //点击跳转商城订单
+                this.html.on("click",".storePresent",function(){
+                    showPage("#pages/order","128965");
+                })
 
             }
         }

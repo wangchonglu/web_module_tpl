@@ -27,6 +27,7 @@ fis.match('/static/js/sea.js', {
 //公用部分
 var commCss = [
     '/static/css/comm.css',
+    '/static/css/**.css',
     '/modules/**.css',
     '/modules/**.scss'
 ];
@@ -37,6 +38,7 @@ var commJs = [
     "/node_modules/zepto/dist/zepto.js",
     "/node_modules/director/build/director.min.js",
     "/node_modules/dot/doT.min.js",
+    "/node_modules/dropload/dist/dropload.js",
     '/app.js'
 ];
 

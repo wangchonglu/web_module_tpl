@@ -5,8 +5,12 @@
     }
   }
   .storePresent {
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #cccccc;
     .storeImg {
       display: inline-block;
+      border:1px solid #cccccc;
       img {
         width: 5rem;
         height: 5rem;
@@ -54,12 +58,16 @@
         .tel{
           color:#fe4a3c;
           font-size: 0.9rem;
+          em{
+            font-style: normal;
+          }
         }
         .storeKm{
           font-size: 0.7rem;
           color: #333333;
           position:absolute;
           right: 1rem;
+          margin-top: 0.2rem;
         }
       }
     }

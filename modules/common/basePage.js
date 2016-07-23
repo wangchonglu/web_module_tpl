@@ -35,10 +35,15 @@ define(function (require, exports, module) {
             window.document.title = this.title;
 
         },
-        dataBind: function (tplFilter, data, targetFilter) {
-            var tpl = this.html.filter(tplFilter).html();
+        dataBind: function (tplFilter, data, targetFilter, isReload) {
+            (isReload == undefined) && (isReload = true);
+            var tpl = this.html.find(tplFilter).html();
             var listHtml = doT.template(tpl)(data);
-            this.html.find(targetFilter).html(listHtml);
+            if (isReload) {
+                this.html.find(targetFilter).html(listHtml);
+            } else {
+                this.html.find(targetFilter).append(listHtml);
+            }
         },
         destroy: function () {
 

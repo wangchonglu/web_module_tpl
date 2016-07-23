@@ -1,6 +1,15 @@
-#page2 {
+#list {
+  -webkit-overflow-scrolling: touch;
+  padding:0px 10px;
+  padding-bottom: 50px;
+  -webkit-box-flex: 1;
+  flex: 1;
+  overflow-y: scroll;
   em {
     font-style: normal;
+  }
+  .storeListBox{
+
   }
   .storeList {
     margin-top: 1rem;
@@ -67,7 +76,9 @@
     bottom: 0;
     font-size: 1rem;
     color: #ffffff;
-    background:#fe4a3c;
+    background:#4791FF;
     text-align: center;
+    left: 50%;
+    margin-left: -50%;
   }
 }

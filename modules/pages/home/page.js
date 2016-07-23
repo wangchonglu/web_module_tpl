@@ -28,7 +28,7 @@ define(function (require, exports, module) {
         },
         jump: function () {
             this.html.on("click", ".peopleManage", function () {
-                showPage('/pages/page2', '123456789')
+                showPage('/pages/list', '123456789')
             });
         },
         //图片上传，拍照

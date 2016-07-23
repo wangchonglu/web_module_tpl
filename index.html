@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <title>Title123</title>
     <meta content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-    <meta content="telephone=no" name="format-detection" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
     <link rel="stylesheet" href="static/css/comm.css">
 </head>
 <body>
 <header id="header">
-    <a href="javascript:history.back()"></a>
+    <a href="javascript:history.back(-1)"></a>
     <span>服务预约</span>
 </header>
-<article>
-    <div id="main" style="padding:10px"></div>
-    <div id="dialogBox">
-        <div class="dialogContent"></div>
-    </div>
-</article>
-<footer></footer>
+<div id="main"></div>
+<div id="dialogBox">
+    <div class="dialogContent"></div>
+</div>
 <script src="static/js/sea.js"></script>
 <script>
-  seajs.use("./app");
+    seajs.use("./app");
 </script>
 </body>
 </html>
